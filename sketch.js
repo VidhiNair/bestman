@@ -40,6 +40,18 @@ function draw(){
     Engine.update(engine);
     background(0); 
 
+        bat= createSprite(Math.round(random(0,400)),Math.round(random(0,400)));
+    bat.addAnimation("moving_bat",batAnimation);
+    bat.visible = false;
+    if(frameCount % 100 === 0){
+       bat.visible = true;
+        bat.velocityX = Math.round(random(-4,4));
+        bat.velocityY = Math.round(random(-4,4));
+        bat.scale=0.4;
+        
+    
+    
+    
     //creating thunder
     rand = Math.round(random(1,4));
     if(frameCount%80===0){
@@ -57,17 +69,6 @@ function draw(){
             default: break;
         }
         thunder.scale = random(0.3,0.6)
-    }
-    bat= createSprite(Math.round(random(0,400)),Math.round(random(0,400)));
-    bat.addAnimation("moving_bat",batAnimation);
-    bat.visible = false;
-    if(frameCount % 100 === 0){
-       bat.visible = true;
-        bat.velocityX = Math.round(random(-4,4));
-        bat.velocityY = Math.round(random(-4,4));
-        bat.scale=0.4;
-        
-       
     }
     
 
